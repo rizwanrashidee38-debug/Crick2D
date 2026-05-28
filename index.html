@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Cricket Career: T20 Edition</title>
+    <style>
+        :root {
+            --pitch-green: #27ae60;
+            --dark-green: #145a32;
+            --ball-red: #c0392b;
+            --boundary-blue: #2980b9;
+            --warning: #f39c12;
+            --bg: #ecf0f1;
+            --text: #2c3e50;
+            --card-bg: #ffffff;
+            --bowl-color: #d35400;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1, h2, h3, h4 { color: var(--dark-green); text-align: center; margin-top: 0; }
+
+        /* Screens */
+        #setup-screen, #game-screen, #season-end-screen {
+            width: 100%;
+            max-width: 900px;
+            display: none; 
+            flex-direction: column;
+            align-items: center;
+        }
+        #setup-screen { display: flex; }
+
+        /* Cards */
+        .card-container {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .form-group { margin-bottom: 15px; width: 100%; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; box-sizing: border-box;
+        }
+
+        /* Layout Grids */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        @media(max-width: 768px) { .dashboard-grid { grid-template-columns: 1fr; } }
+
+        .stat-box {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 4px solid var(--pitch-green);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .stat-box.bowl-theme { border-top-color: var(--bowl-color); }
+
+        .stat-value { font-size: 1.4rem; font-weight: bold; color: var(--dark-green); margin-top: 5px; }
+        .stat-value.red { color: var(--ball-red); }
+
+        /* Match Header */
+        .match-header {
+            background: var(--dark-green);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        .match-header span { color: var(--warning); font-weight: bold; }
+
+        /* Game Area */
+        .game-area { text-align: center; width: 100%; }
+        .message { font-size: 1.3rem; font-weight: bold; min-height: 40px; color: var(--dark-green); margin-bottom: 10px; }
+        
+        .tiles-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 15px; max-width: 400px; margin: 0 auto;
+        }
+
+        .tile {
+            background-color: var(--pitch-green); color: white; height: 110px; border-radius: 8px;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: bold;
+            cursor: pointer; user-select: none; box-shadow: 0 5
 
